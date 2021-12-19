@@ -3,11 +3,11 @@ import axios from "axios";
 import React from "react";
 import { createApi } from "unsplash-js";
 import { Helmet } from "react-helmet";
-import favicon from "./favicon.ico"
+import favicon from "./favicon.ico";
 
 class App extends React.Component {
   state = {
-    advice: "sky",
+    advice: "loading...",
     backgroundUrl:
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW5zcGlyYXRpb258ZW58MHx8MHx8&w=1000&q=80",
   };
@@ -74,11 +74,10 @@ class App extends React.Component {
           <link rel="shortcut icon" href={favicon} type="image/x-icon" />
         </Helmet>
         <div className="card">
-         
           <p className="heading">{this.state.advice}</p>
-          
+
           <button className="button" onClick={this.fetchQuote}>
-            <span>GIVE ME ADVICE!</span>
+            <span>ONE MORE ADVICE!</span>
           </button>
         </div>
       </div>
