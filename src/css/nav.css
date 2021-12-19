@@ -1,0 +1,28 @@
+.navigation_container {
+  padding: 0.2rem;
+  height: 10vh;
+  background: #212121;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav_heading {
+  margin-top: 0.2rem;
+  margin-left: 0.8rem;
+  color: whitesmoke;
+}
+.github_icon {
+  border-radius: 50%;
+  width: max-content;
+  height: max-content;
+  padding: 0;
+  margin-top: 0.2rem;
+  margin-right: 0.8rem;
+}
+.navigation_container img {
+  object-fit: cover;
+  object-position: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}

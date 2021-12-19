@@ -1,13 +1,17 @@
-#root, html, body {
+#root,
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 .app {
-  height: 100%;
-  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW5zcGlyYXRpb258ZW58MHx8MHx8&w=1000&q=80');
+  height: 80vh;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW5zcGlyYXRpb258ZW58MHx8MHx8&w=1000&q=80");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -17,7 +21,6 @@
 }
 
 .card {
-  
   width: 40%;
   height: 20%;
   display: flex;
@@ -25,8 +28,8 @@
   flex-direction: column;
   border-radius: 25px;
   padding: 2%;
-  box-shadow: 10px 10px rgba(0,0,0,.7);
-  background-color: rgba(0,0,0,.5);
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 
@@ -50,26 +53,26 @@
   height: 200px;
   width: 210px;
   opacity: 1;
-  background-color: #bb86fc ;
+  background-color: #bb86fc;
   border: 1px solid rgba(22, 76, 167, 0.6);
 }
-  
+
 .button span {
-  color: #164ca7;
+  color: purple;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.7px;
 }
-  
+
 .button:hover {
   animation: rotate 0.7s ease-in-out both;
 }
-  
+
 .button:hover span {
   animation: storm 0.7s ease-in-out both;
   animation-delay: 0.06s;
 }
-  
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg) translate3d(0, 0, 0);
@@ -87,7 +90,7 @@
     transform: rotate(0deg) translate3d(0, 0, 0);
   }
 }
-  
+
 @keyframes storm {
   0% {
     transform: translate3d(0, 0, 0) translateZ(0);
@@ -104,11 +107,11 @@
   100% {
     transform: translate3d(0, 0, 0) translateZ(0);
   }
-}  
+}
 
 @media only screen and (max-width: 600px) {
   .card {
-      width: 80%;
-      height: 30%;
+    width: 80%;
+    height: 30%;
   }
 }
