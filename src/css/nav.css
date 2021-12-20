@@ -10,6 +10,7 @@
   margin-top: 0.2rem;
   margin-left: 0.8rem;
   color: whitesmoke;
+  font-family: 'Montserrat', sans-serif;
 }
 .github_icon {
   border-radius: 50%;
@@ -25,4 +26,5 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  filter: grayscale();
 }

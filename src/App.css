@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
 #root,
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  
+  font-family: "Sora", sans-serif;
 }
 
 .app {
@@ -39,10 +40,11 @@ body {
   align-items: center;
   font-size: large;
   height: 582px;
-  font-family: 'Patrick Hand SC', cursive;
+  font-family: "Patrick Hand", cursive;
 }
 
 .button {
+  font-family: "Alegreya Sans SC", sans-serif;
   position: relative;
   outline: none;
   text-decoration: none;
@@ -66,11 +68,11 @@ body {
   letter-spacing: 0.7px;
 }
 
-.button:hover {
+.button:hover, .button:active   {
   animation: rotate 0.7s ease-in-out both;
 }
 
-.button:hover span {
+.button:hover span, .button:active span  {
   animation: storm 0.7s ease-in-out both;
   animation-delay: 0.06s;
 }
