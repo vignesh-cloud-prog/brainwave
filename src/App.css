@@ -1,17 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 #root,
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100vh;
-  /* box-sizing: border-box; */
+  
 }
 
 .app {
   height: 80vh;
-  background-color: black;
-  animation-timing-function: ease-in;
-  animation-duration: 3s;
   background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW5zcGlyYXRpb258ZW58MHx8MHx8&w=1000&q=80");
   background-size: cover;
@@ -27,6 +25,7 @@ body {
   height: 20%;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   border-radius: 25px;
   padding: 2%;
@@ -40,6 +39,7 @@ body {
   align-items: center;
   font-size: large;
   height: 582px;
+  font-family: 'Patrick Hand SC', cursive;
 }
 
 .button {

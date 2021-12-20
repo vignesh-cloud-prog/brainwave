@@ -69,7 +69,7 @@ export default class Main extends Component {
             <link rel="shortcut icon" href={favicon} type="image/x-icon" />
           </Helmet>
           <div className="card">
-            <b className="heading">"{this.state.advice}"</b>
+            <p className="heading">"{this.state.advice}"</p>
 
             <button className="button" onClick={this.fetchQuote}>
               <span>ONE MORE ADVICE!</span>
