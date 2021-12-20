@@ -12,28 +12,9 @@ export default class Main extends Component {
   };
 
   async componentDidMount() {
-    this.newQuote();
-  }
-
-  newQuote = () => {
     this.fetchQuote();
-    this.getImage();
-  };
-
-  fetchQuote = () => {
-    axios
-      .get("https://api.adviceslip.com/advice")
-      .then((response) => {
-        const { advice } = response.data.slip;
-        // console.log(advice);
-        this.setState({ advice });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
-  getImage = () => {
+  }
+  setBgImage = () => {
     const unsplash = createApi({
       accessKey: process.env.REACT_APP_MY_ACCESS_KEY,
     });
@@ -51,12 +32,27 @@ export default class Main extends Component {
         } else {
           // handle success here
           const photo = result.response;
-          // console.log(photo.results[0].urls.full);
-          const url = photo.results[0].urls.full;
+          console.log(photo.results[0].urls.thumb);
+          const url = photo.results[0].urls.small;
           this.setState({ backgroundUrl: url });
         }
       });
   };
+  fetchQuote = () => {
+    
+    axios
+      .get("https://api.adviceslip.com/advice")
+      .then((response) => {
+        const { advice } = response.data.slip;
+        // console.log(advice);
+        this.setState({ advice },()=>{this.setBgImage();});
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+
   render() {
     return (
       <main>
@@ -75,7 +71,7 @@ export default class Main extends Component {
           <div className="card">
             <b className="heading">"{this.state.advice}"</b>
 
-            <button className="button" onClick={this.newQuote}>
+            <button className="button" onClick={this.fetchQuote}>
               <span>ONE MORE ADVICE!</span>
             </button>
           </div>
