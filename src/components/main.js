@@ -11,16 +11,15 @@ export default class Main extends Component {
     backgroundUrl: bg,
   };
 
-  componentDidMount() {
+  async componentDidMount() {
+    this.newQuote();
+  }
+
+  newQuote = () => {
     this.fetchQuote();
-  }
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.advice !== this.state.advice) {
-      console.log("pokemons state has changed.");
-      this.getImage();
-      console.log(this.state.backgroundUrl);
-    }
-  }
+    this.getImage();
+  };
+
   fetchQuote = () => {
     axios
       .get("https://api.adviceslip.com/advice")
@@ -76,7 +75,7 @@ export default class Main extends Component {
           <div className="card">
             <b className="heading">"{this.state.advice}"</b>
 
-            <button className="button" onClick={this.fetchQuote}>
+            <button className="button" onClick={this.newQuote}>
               <span>ONE MORE ADVICE!</span>
             </button>
           </div>
