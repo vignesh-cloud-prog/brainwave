@@ -1,0 +1,35 @@
+.spinner6 {
+    background: purple;
+    border-radius: 50%;
+    height: 1em;
+    margin: .1em;
+    width: 1em;
+  }
+  
+  .p1 {
+    animation: fall 1s linear .3s infinite;
+  }
+  
+  .p2 {
+    animation: fall 1s linear .2s infinite;
+  }
+  
+  .p3 {
+    animation: fall 1s linear .1s infinite;
+  }
+  
+  .p4 {
+    animation: fall 1s linear infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-15px);
+    }
+    25%, 75% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-15px);
+    }
+  }

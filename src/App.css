@@ -68,11 +68,11 @@ body {
   letter-spacing: 0.7px;
 }
 
-.button:hover, .button:active   {
+.button:target  {
   animation: rotate 0.7s ease-in-out both;
 }
 
-.button:hover span, .button:active span  {
+.button:target span {
   animation: storm 0.7s ease-in-out both;
   animation-delay: 0.06s;
 }

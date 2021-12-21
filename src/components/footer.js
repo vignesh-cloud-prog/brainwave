@@ -11,7 +11,7 @@ export default class Footer extends Component {
   render() {
     return (
       <footer>
-        <p>Follow me on</p>
+        <p>Developed by Vignesh</p>
         <span className="footer__socials">
           <a
             href="https://vighnesha.me/"

@@ -1,14 +1,13 @@
 import React, { Component } from "react";
-import { Helmet } from "react-helmet";
-import favicon from "../images/favicon.ico";
 import axios from "axios";
 import bg from "../images/advizer_bg.jpg";
 import { createApi } from "unsplash-js";
-
+import "../css/loader.css";
 export default class Main extends Component {
   state = {
     advice: "loading...",
     backgroundUrl: bg,
+    quoteLoading: false,
   };
 
   async componentDidMount() {
@@ -39,6 +38,7 @@ export default class Main extends Component {
       });
   };
   fetchQuote = () => {
+    this.setState({quoteLoading:true})
     axios
       .get("https://api.adviceslip.com/advice")
       .then((response) => {
@@ -47,6 +47,7 @@ export default class Main extends Component {
         this.setState({ advice }, () => {
           this.setBgImage();
         });
+        this.setState({quoteLoading:false})
       })
       .catch((error) => {
         console.log(error);
@@ -60,38 +61,21 @@ export default class Main extends Component {
           className="app"
           style={{ backgroundImage: `url(${this.state.backgroundUrl})` }}
         >
-          <Helmet>
-            <title>Advizer</title>
-            <meta
-              name="description"
-              content="Get the most inspirational quotes at your finger tips. "
-            />
-            <link rel="shortcut icon" href={favicon} type="image/x-icon" />
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link
-              rel="preconnect"
-              href="https://fonts.gstatic.com"
-              crossorigin
-            />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
-              rel="stylesheet"
-            ></link>
-
-            <link
-              href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@500&display=swap"
-              rel="stylesheet"
-            />
-            <link
-              href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap"
-              rel="stylesheet"
-            />
-          </Helmet>
+          
           <div className="card">
             <b className="heading">"{this.state.advice}"</b>
 
             <button className="button" onClick={this.fetchQuote}>
-              <span>ONE MORE ADVICE!</span>
+              {this.state.quoteLoading ? (
+                <>
+                  <div class="spinner6 p1"></div>
+                  <div class="spinner6 p2"></div>
+                  <div class="spinner6 p3"></div>
+                  <div class="spinner6 p4"></div>
+                </>
+              ) : (
+                <span>ONE MORE ADVICE!</span>
+              )}
             </button>
           </div>
         </div>
