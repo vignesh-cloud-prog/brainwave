@@ -4,6 +4,8 @@ Advizer is an inspirational quote showing website with a related background imag
 
 Built using HTML, CSS and Javascript & React. Getting quotes from [Advice Slip JSON API](https://api.adviceslip.com/) and getting quote related background images from [Unsplash](https://unsplash.com/).
 
+A hackathon project on [Devpost](https://devpost.com/software/advizer)
+
 [live🚀](https://advizer.netlify.app/)
 
 ## Features
