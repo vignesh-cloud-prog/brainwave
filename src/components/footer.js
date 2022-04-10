@@ -14,7 +14,7 @@ export default class Footer extends Component {
         <p>Developed by Vignesh</p>
         <span className="footer__socials">
           <a
-            href="https://vighnesha.me/"
+            href="http://vighnesha.me/"
             rel="noreferrer"
             className="footer__social"
             target="_blank"
